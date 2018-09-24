@@ -1,0 +1,83 @@
+@import 'mixings';
+// grid
+.mrm-grid {
+    display: grid;
+    grid-auto-rows: minmax(24px, auto);
+    grid-auto-flow: row;
+    @include grid-settings(tel);
+    @include on-size-tab {
+        @include grid-settings(tab);
+    }
+    @include on-size-desk {
+        @include grid-settings(desk);
+    }
+}
+
+.mrm-grid--flow-column {
+    grid-auto-flow: column;
+}
+
+// cell
+.mrm-cell {
+    grid-column: auto / span 1;
+    min-height: $grid-cell-min-height;
+    padding: 0;
+    display: block;
+
+    @for $i from map-get($grid-cell-count, desk) through length(2) {
+        &.col-#{$i} {
+            grid-column: auto / span $i;
+        }
+    }
+
+    @include on-size-tel {
+        @for $i from map-get($grid-cell-count, tel) through length(2) {
+            &.col-#{$i}-tel {
+                grid-column: auto / span $i;
+            }
+        }
+    }
+
+    @include on-size-tab {
+        @for $i from map-get($grid-cell-count, tab) through length(2) {
+            &.col-#{$i}-tab {
+                grid-column: auto / span $i;
+            }
+        }
+    }
+
+    @include on-size-desk {
+        @for $i from map-get($grid-cell-count, desk) through length(2) {
+            &.col-#{$i}-desk {
+                grid-column: auto / span $i;
+            }
+        }
+    }
+}
+
+.mrm-cell.top {
+    align-self: start;
+}
+
+.mrm-cell.center {
+    align-self: center;
+}
+
+.mrm-cell.bottom {
+    align-self: end;
+}
+
+
+
+
+.mrm-grid.no-padding {
+    padding: 0;
+}
+
+.mrm-grid.auto-fill {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+}
+
+.mrm-grid.auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}

@@ -1,0 +1,24 @@
+@import 'variables';
+@mixin on-size-tel() {
+    @media screen and (max-width: map-get($map: $s-size, $key: tel)) {
+        @content;
+    }
+}
+
+@mixin on-size-tab() {
+    @media screen and (max-width: map-get($map: $s-size, $key: tab)) and (min-width: map-get($map: $s-size, $key: tel)) {
+        @content;
+    }
+}
+
+@mixin on-size-tab-desk() {
+    @media screen and (min-width: map-get($map: $s-size, $key: tel)) {
+        @content;
+    }
+}
+
+@mixin on-size-desk() {
+    @media screen and (min-width: map-get($map: $s-size, $key: desk)) {
+        @content;
+    }
+}
