@@ -1,0 +1,25 @@
+.d-block {
+    display: block;
+}
+
+.hide {
+    display: none !important;
+}
+
+@include on-size-tab{
+    .hide-tel {
+        display: none !important;
+    }
+}
+
+@include on-size-tab{
+    .hide-tab {
+        display: none !important;
+    }
+}
+
+@include on-size-desk{
+    .hide-desk {
+        display: none !important;
+    }
+}
