@@ -6,3 +6,19 @@ $grid-cell-count: (tel: 4, tab: 8, desk: 12) !default;
 $container-width: 1100px !default;
 
 $grid-cell-min-height: 24px;
+
+
+/* Cards */
+$card-min-height: 64px !default;
+$card-border-radius: 2px;
+$card-content-margin: 32px 16px;
+$card-media-min-height: 64, 128, 196, 256;
+$card-media-min-height-default: 128;
+
+/* Colors */
+$palettePrimary: $paletteAmber-500;
+$palettePrimaryLight: $paletteAmber-300;
+$palettePrimaryDark: $paletteAmber-700;
+$paletteAccent: $paletteBlue-A200;
+$paletteAccentLight: $paletteBlue-A100;
+$paletteAccentDark: $paletteBlue-A700;
