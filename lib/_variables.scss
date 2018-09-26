@@ -1,24 +1,70 @@
-$margins: 0, 8, 16, 24;
-$s-size: ( tel: 599px, tab: 839px, desk: 840px) !default;
-$grid-margins: ( tel: 16px, tab: 16px, desk: 24px) !default;
-$grid-gutters: ( tel: 16px, tab: 16px, desk: 24px) !default;
-$grid-cell-count: (tel: 4, tab: 8, desk: 12) !default;
-$container-width: 1100px !default;
+$margins: 0, 8, 16, 24 !default;
+$sSize: ( tel: 599px, tab: 839px, desk: 840px) !default;
 
-$grid-cell-min-height: 24px;
+/* Container */
+$containerWidth: 1100px !default;
 
+/* Grid */
+$gridMargins: ( tel: 16px, tab: 16px, desk: 24px) !default;
+$gridGutters: ( tel: 16px, tab: 16px, desk: 24px) !default;
+$gridCellCount: (tel: 4, tab: 8, desk: 12) !default;
+$gridCellMinHeight: 24px;
 
 /* Cards */
-$card-min-height: 64px !default;
-$card-border-radius: 2px;
-$card-content-margin: 32px 16px;
-$card-media-min-height: 64, 128, 196, 256;
-$card-media-min-height-default: 128;
+$cardMinHeight: 64px !default;
+$cardBorderRadius: 2px !default;
+$cardContentMargin: 32px 16px !default;
+$cardMediaMinHeight: 64, 128, 196, 256 !default;
+$cardMediaMinHeightDefault: 128 !default;
 
 /* Colors */
-$palettePrimary: $paletteAmber-500;
-$palettePrimaryLight: $paletteAmber-300;
-$palettePrimaryDark: $paletteAmber-700;
-$paletteAccent: $paletteBlue-A200;
-$paletteAccentLight: $paletteBlue-A100;
-$paletteAccentDark: $paletteBlue-A700;
+$palettePrimary: $paletteAmber-500 !default;
+$palettePrimaryLight: $paletteAmber-300 !default;
+$palettePrimaryDark: $paletteAmber-700 !default;
+$paletteAccent: $paletteBlue-A200 !default;
+$paletteAccentLight: $paletteBlue-A100 !default;
+$paletteAccentDark: $paletteBlue-A700 !default;
+
+/* Shadows */
+$boxShadows: (
+    0: 'none',
+    1: '0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20)',
+    2: '0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.20)',
+    3: '0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.20)',
+    4: '0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.20)',
+    6: '0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.20)',
+    8: '0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.20)',
+    9: '0 9px 12px 1px rgba(0,0,0,0.14), 0 3px 16px 2px rgba(0,0,0,0.12), 0 5px 6px -3px rgba(0,0,0,0.20)',
+    12: '0 12px 17px 2px rgba(0,0,0,0.14), 0 5px 22px 4px rgba(0,0,0,0.12), 0 7px 8px -4px rgba(0,0,0,0.20)',
+    16: '0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.20)',
+    24: '0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.20)'
+) !default;
+
+/* button */
+$buttonPadding: 0 8px !default;
+$buttonMargin: 8px !default;
+$buttonFontSize: 14px !default;
+$buttonBorderRadius: 2px !default;
+$buttonHeight: 36px !default;
+$buttonInnerMinWidth: 64px !default;
+$buttonTransitionSpeed: .2s !default;
+$buttonColorMap: (
+    'primary': $palettePrimary,
+    'primary-light': $palettePrimaryLight,
+    'primary-dark': $palettePrimaryDark,
+    'accent': $paletteAccent,
+    'accent-light': $paletteAccentLight,
+    'accent-dark': $paletteAccentDark,
+    'red': $paletteRed-500
+) !default;
+$buttonColorSteps: (
+    1: 6%,
+    2: 12%,
+    3: 18%
+) !default;
+$buttonUseColorChanges: false !default;
+
+/* toolbar */
+$toolbarHeight: 64px !default;
+$toolbarHeightMobile: 56px !default;
+$toolbarHeightMobileLandscape: 48px !default;

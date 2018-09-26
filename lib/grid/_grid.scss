@@ -20,18 +20,18 @@
 // cell
 .mrm-cell {
     grid-column: auto / span 1;
-    min-height: $grid-cell-min-height;
+    min-height: $gridCellMinHeight;
     padding: 0;
     display: block;
 
-    @for $i from map-get($grid-cell-count, desk) through length(2) {
+    @for $i from map-get($gridCellCount, desk) through length(2) {
         &.col-#{$i} {
             grid-column: auto / span $i;
         }
     }
 
     @include on-size-tel {
-        @for $i from map-get($grid-cell-count, tel) through length(2) {
+        @for $i from map-get($gridCellCount, tel) through length(2) {
             &.col-#{$i}-tel {
                 grid-column: auto / span $i;
             }
@@ -39,7 +39,7 @@
     }
 
     @include on-size-tab {
-        @for $i from map-get($grid-cell-count, tab) through length(2) {
+        @for $i from map-get($gridCellCount, tab) through length(2) {
             &.col-#{$i}-tab {
                 grid-column: auto / span $i;
             }
@@ -47,7 +47,7 @@
     }
 
     @include on-size-desk {
-        @for $i from map-get($grid-cell-count, desk) through length(2) {
+        @for $i from map-get($gridCellCount, desk) through length(2) {
             &.col-#{$i}-desk {
                 grid-column: auto / span $i;
             }
@@ -66,8 +66,6 @@
 .mrm-cell.bottom {
     align-self: end;
 }
-
-
 
 
 .mrm-grid.no-padding {

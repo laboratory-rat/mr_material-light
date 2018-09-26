@@ -1,6 +1,6 @@
 @mixin grid-settings($k) {
-    grid-column-gap: map-get($map: $grid-gutters, $key: $k);
-    grid-row-gap: map-get($map: $grid-gutters, $key: $k);
-    grid-template-columns: repeat(map-get($map: $grid-cell-count, $key: $k), 1fr);
-    margin: 0 map-get($map: $grid-margins, $key: $k);
+    grid-column-gap: map-get($map: $gridGutters, $key: $k);
+    grid-row-gap: map-get($map: $gridGutters, $key: $k);
+    grid-template-columns: repeat(map-get($map: $gridCellCount, $key: $k), 1fr);
+    margin: 0 map-get($map: $gridMargins, $key: $k);
 }

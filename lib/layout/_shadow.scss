@@ -1,0 +1,5 @@
+@each $k, $v in $boxShadows{
+    .mrm-shadow-#{$k}{
+        box-shadow: #{$v};
+    }
+}

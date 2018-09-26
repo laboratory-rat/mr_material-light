@@ -1,6 +1,7 @@
 @import 'hide';
+@import 'shadow';
 
 .mrm-container {
-    max-width: $container-width;
+    max-width: $containerWidth;
     margin: 0 auto;
 }

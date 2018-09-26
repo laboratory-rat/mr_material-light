@@ -3,25 +3,26 @@
 
 .mrm-card {
     background-color: $paletteWhite;
-    min-height: $card-min-height;
+    min-height: $cardMinHeight;
     position: relative;
-    border-radius: $card-border-radius;
+    border-radius: $cardBorderRadius;
+    @include add-shadow(2);
+
+    &>.header{
+        height: 32px;
+        padding: 16px;
+    }
+
+    &>.media {
+        min-height: $cardMediaMinHeightDefault;
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
 }
 
-.mrm-card>.header {
-    height: 32px;
-    padding: 16px;
-}
-
-.mrm-card>.media {
-    min-height: $card-media-min-height-default;
-    position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
-@each $i in $card-media-min-height {
+@each $i in $cardMediaMinHeight {
     .mrm-card>.media.min-#{$i} {
         min-height: #{$i}px;
     }
@@ -64,7 +65,7 @@
 
 .mrm-card>.content {
     display: block;
-    margin: $card-content-margin;
+    margin: $cardContentMargin;
 }
 
 

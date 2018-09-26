@@ -1,0 +1,105 @@
+// flat button
+button.mrm-button {
+    border-radius: $buttonBorderRadius;
+    height: $buttonHeight;
+    margin: $buttonMargin;
+    text-transform: uppercase;
+    padding: $buttonPadding;
+    min-width: calc(#{$buttonInnerMinWidth} + #{nth($buttonPadding, 2)} * 2);
+    background-color: $paletteEmpty;
+    border: none;
+    transition: all $buttonTransitionSpeed linear;
+    color: $paletteBlack;
+    cursor: pointer;
+    &:focus {
+        outline: none !important; // background-color: $paletteBlack-12;
+        -webkit-tap-highlight-color: $paletteEmpty !important;
+    }
+    @include on-size-tab-desk {
+        &:hover {
+            background-color: $paletteBlack-12;
+        }
+    }
+    &:active,
+    &.active {
+        background-color: $paletteBlack-17;
+    }
+    &:disabled {
+        background-color: $paletteEmpty !important;
+        color: $paletteBlack-26;
+        cursor: auto;
+    }
+    // coloring
+    &:not(.mrm-button--raised) {
+        @each $k,
+        $v in $buttonColorMap {
+            &.mrm-button--#{$k} {
+                color: $v;
+            }
+        }
+    }
+}
+
+
+/* raised button */
+
+button.mrm-button--raised {
+    background-color: $paletteGrey-300;
+    @include add-shadow(2);
+    &:active,
+    &.active {
+        @include add-shadow(6);
+    }
+    &:disabled {
+        background-color: $paletteBlack-12 !important;
+        color: $paletteBlack-26;
+        cursor: auto;
+        box-shadow: none;
+    }
+    @each $k,
+    $v in $buttonColorMap {
+        &.mrm-button--#{$k} {
+            background-color: $v;
+            color: $paletteWhite;
+            @if($buttonUseColorChanges==true) {
+                @include on-size-tab-desk {
+                    &:hover {
+                        background-color: darken($color: $v, $amount: map-get($buttonColorSteps, 1));
+                    }
+                }
+                &:active,
+                &.active {
+                    background-color: darken($color: $v, $amount: map-get($buttonColorSteps, 2));
+                }
+            }
+            @else {
+                @include on-size-tab-desk {
+                    &:hover {
+                        background-color: $v;
+                    }
+                }
+                &:active,
+                &.active {
+                    background-color: $v;
+                }
+            }
+        }
+    }
+}
+
+
+/* button icon */
+
+button.mrm-button--icon {
+    padding: 0px;
+    border-radius: 50%;
+    min-width: 36px;
+    @include on-size-tab-desk {
+        &:hover {
+            background-color: $paletteEmpty;
+        }
+    }
+    &:active {
+        background-color: $paletteBlack-20;
+    }
+}

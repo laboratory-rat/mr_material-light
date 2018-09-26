@@ -1,24 +1,28 @@
 @import 'variables';
 @mixin on-size-tel() {
-    @media screen and (max-width: map-get($map: $s-size, $key: tel)) {
+    @media screen and (max-width: map-get($map: $sSize, $key: tel)) {
         @content;
     }
 }
 
 @mixin on-size-tab() {
-    @media screen and (max-width: map-get($map: $s-size, $key: tab)) and (min-width: map-get($map: $s-size, $key: tel)) {
+    @media screen and (max-width: map-get($map: $sSize, $key: tab)) and (min-width: map-get($map: $sSize, $key: tel)) {
         @content;
     }
 }
 
 @mixin on-size-tab-desk() {
-    @media screen and (min-width: map-get($map: $s-size, $key: tel)) {
+    @media screen and (min-width: map-get($map: $sSize, $key: tel)) {
         @content;
     }
 }
 
 @mixin on-size-desk() {
-    @media screen and (min-width: map-get($map: $s-size, $key: desk)) {
+    @media screen and (min-width: map-get($map: $sSize, $key: desk)) {
         @content;
     }
+}
+
+@mixin add-shadow($grade) {
+    box-shadow: #{map-get($map: $boxShadows, $key: $grade)};
 }
