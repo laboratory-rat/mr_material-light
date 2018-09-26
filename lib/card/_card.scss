@@ -1,18 +1,17 @@
 @import 'mixings';
-
-
 .mrm-card {
     background-color: $paletteWhite;
     min-height: $cardMinHeight;
     position: relative;
     border-radius: $cardBorderRadius;
-    @include add-shadow(2);
-
-    &>.header{
+    @include add-shadow(1);
+    &.raised {
+        @include add-shadow(8);
+    }
+    &>.header {
         height: 32px;
         padding: 16px;
     }
-
     &>.media {
         min-height: $cardMediaMinHeightDefault;
         position: relative;
@@ -68,7 +67,6 @@
     margin: $cardContentMargin;
 }
 
-
 /* collection */
 
 .mrm-card-collection {
@@ -78,10 +76,10 @@
     }
 }
 
-
 /* dark */
 
-.mrm-dark .mrm-card, .mrm-dark.mrm-card {
+.mrm-dark .mrm-card,
+.mrm-dark.mrm-card {
     border-bottom: 1px solid $paletteWhite-12;
     color: $paletteWhite;
 }

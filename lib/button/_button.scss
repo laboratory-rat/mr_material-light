@@ -28,8 +28,7 @@ button.mrm-button {
         background-color: $paletteEmpty !important;
         color: $paletteBlack-26;
         cursor: auto;
-    }
-    // coloring
+    } // coloring
     &:not(.mrm-button--raised) {
         @each $k,
         $v in $buttonColorMap {
@@ -39,7 +38,6 @@ button.mrm-button {
         }
     }
 }
-
 
 /* raised button */
 
@@ -86,7 +84,6 @@ button.mrm-button--raised {
         }
     }
 }
-
 
 /* button icon */
 

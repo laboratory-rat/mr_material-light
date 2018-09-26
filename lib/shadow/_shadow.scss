@@ -1,0 +1,7 @@
+@import 'mixings';
+@each $k,
+$v in $boxShadows {
+    .mrm-shadow-#{$k} {
+        @include add-shadow($k);
+    }
+}

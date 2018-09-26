@@ -1,0 +1,7 @@
+@import 'mixings';
+
+@each $k, $v in $fontWeights{
+    .mrm-font-#{$k}{
+        @include set-font($k);
+    }
+}

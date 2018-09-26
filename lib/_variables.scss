@@ -1,6 +1,14 @@
 $margins: 0, 8, 16, 24 !default;
 $sSize: ( tel: 599px, tab: 839px, desk: 840px) !default;
 
+/* Font */
+$fontWeights: (
+    thin: 200,
+    regular: 400,
+    medium: 500,
+    bold: 700
+);
+
 /* Container */
 $containerWidth: 1100px !default;
 

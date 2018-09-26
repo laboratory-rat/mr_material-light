@@ -1,0 +1,3 @@
+@mixin set-font($name){
+    font-weight: map-get($map: $fontWeights, $key: $name) !important;
+}

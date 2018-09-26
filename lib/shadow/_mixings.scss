@@ -1,0 +1,3 @@
+@mixin add-shadow($grade) {
+    box-shadow: #{map-get($map: $boxShadows, $key: $grade)};
+}
