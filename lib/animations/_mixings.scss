@@ -1,0 +1,3 @@
+@mixin add-transition($target, $function, $speed){
+    transition: #{$target} map-get($map: $animFunction, $key: $function) map-get($map: $animSpeed, $key: $speed);
+}

@@ -7,7 +7,7 @@ $fontWeights: (
     regular: 400,
     medium: 500,
     bold: 700
-);
+) !default;
 
 /* Container */
 $containerWidth: 1100px !default;
