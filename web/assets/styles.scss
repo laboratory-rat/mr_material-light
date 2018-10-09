@@ -1,0 +1,44 @@
+@import '../../lib/mr_material.scss';
+$ex-card-holder: '.expand-card-holder';
+$ex-card-holder-active: '.expand-card-holder-active';
+$ex-card: '.expand-card';
+$ex-card-active: '.expand-card-active';
+$ex-card-close-button: '.expand-card-button-close';
+#{$ex-card-holder} {
+    @include add-transition('all', 'easing', 'slow');
+    &#{$ex-card-holder-active} {
+        display: block;
+        #{$ex-card} {
+            &:not(#{$ex-card-active}) {
+                display: none;
+            }
+            &#{$ex-card-active} {
+                animation: card-expand .3s map-get($map: $animFunction, $key: 'easing');
+                display: block;
+                // grid-column: auto/span 20 !important;
+                // @include add-transition('grid-column', 'easing', 'slow');
+            }
+        }
+    }
+    #{$ex-card} {
+        &:not(#{$ex-card-active}) {
+            #{$ex-card-close-button} {
+                display: none;
+            }
+        }
+    }
+}
+
+body {
+    background-color: #eee;
+    font-family: 'Roboto', sans-serif;
+}
+
+@keyframes card-expand{
+    0%{
+        overflow: hidden;
+        width: 200px;
+    } 100%{
+        width: 100%;
+    }
+}

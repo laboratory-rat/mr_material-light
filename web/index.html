@@ -7,28 +7,111 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Test</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../dist/style/mr_material.css">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../dist/style/mr_material.css"> -->
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
 
 <body>
-    <div class="mrm-grid m-8--top">
-        <div class="mrm-cell col-4 col-4-desk"></div>
-        <div class="mrm-cell col-4 col-4-desk">
-            <div class="mrm-card">
-                <div class="content">
-                    <button class="mrm-button mrm-button--primary mrm-button--raised">
-                        Some button
-                    </button> <br>
-                    <button class="mrm-button mrm-button--icon mrm-button--accent mrm-button--raised">
-                        <i class="material-icons">edit</i>
-                    </button>
+    <div class="mrm-container">
+
+        <div class="mrm-grid m-8--top expand-card-holder">
+            <div class="mrm-cell col-4 col-4-desk expand-card">
+                <div class="mrm-card">
+                    <div class="header">
+                        <h4 class="title m-0">Some title 1</h4>
+                        <span>Some subheader</span>
+                    </div>
+                    <div class="content">
+                        <div>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, sapiente quia? Molestias rem incidunt, consequuntur officia vel itaque quo, dolorem, exercitationem accusantium excepturi laudantium quidem cupiditate porro! Explicabo, corrupti voluptates.
+                        </div>
+                    </div>
+                    <div class="mrm-card-actions">
+                        <button class="mrm-button expand-card-button-close">Close</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="mrm-cell col-4 col-4-desk"></div>
+            <div class="mrm-cell col-4 col-4-desk expand-card">
+                <div class="mrm-card">
+                    <div class="header">
+                        <h4 class="title m-0">Some title 2</h4>
+                        <span>Some subheader</span>
+                    </div>
+                    <div class="content">
+                        <div>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, sapiente quia? Molestias rem incidunt, consequuntur officia vel itaque quo, dolorem, exercitationem accusantium excepturi laudantium quidem cupiditate porro! Explicabo, corrupti voluptates.
+                        </div>
+                    </div>
+                    <div class="mrm-card-actions">
+                        <button class="mrm-button expand-card-button-close">Close</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mrm-cell col-4 col-4-desk expand-card">
+                <div class="mrm-card">
+                    <div class="header">
+                        <h4 class="title m-0">Some title 3</h4>
+                        <span>Some subheader</span>
+                    </div>
+                    <div class="content">
+                        <div>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, sapiente quia? Molestias rem incidunt, consequuntur officia vel itaque quo, dolorem, exercitationem accusantium excepturi laudantium quidem cupiditate porro! Explicabo, corrupti voluptates.
+                        </div>
+                    </div>
+                    <div class="mrm-card-actions">
+                        <button class="mrm-button expand-card-button-close">Close</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mrm-cell col-4 col-4-desk expand-card">
+                <div class="mrm-card">
+                    <div class="header">
+                        <h4 class="title m-0">Some title 4</h4>
+                        <span>Some subheader</span>
+                    </div>
+                    <div class="content">
+                        <div>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, sapiente quia? Molestias rem incidunt, consequuntur officia vel itaque quo, dolorem, exercitationem accusantium excepturi laudantium quidem cupiditate porro! Explicabo, corrupti voluptates.
+                        </div>
+                    </div>
+                    <div class="mrm-card-actions">
+                        <button class="mrm-button expand-card-button-close">Close</button>
+                    </div>
+                </div>
+            </div>
 
+        </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        jQuery(function($) {
+            const HOLDER_ACTIVE = 'expand-card-holder-active';
+            const CARD_ACTIVE = 'expand-card-active';
+
+            let holder = $('.expand-card-holder');
+            $('.expand-card', holder).each(function(i, elem) {
+                let $$ = $(this);
+                $$.click(() => {
+                    if (holder.hasClass(HOLDER_ACTIVE)) return;
+
+                    holder.addClass(HOLDER_ACTIVE);
+                    $$.addClass(CARD_ACTIVE);
+                });
+
+                $('.expand-card-button-close', $$).click(($event) => {
+                    console.log(123);
+                    if (!$$.hasClass(CARD_ACTIVE)) return;
+
+                    $$.removeClass(CARD_ACTIVE);
+                    holder.removeClass(HOLDER_ACTIVE);
+                    $event.stopPropagation();
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>
