@@ -1,4 +1,4 @@
-$margins: 0, 8, 16, 24 !default;
+$margins: 0, .5rem, 1rem, 1.5rem, !default;
 $sSize: ( tel: 599px, tab: 839px, desk: 840px) !default;
 
 /* Font */
@@ -9,20 +9,50 @@ $fontWeights: (
     bold: 700
 ) !default;
 
+$fontSizes: (
+    'h1': 6rem,
+    'h2': 3.75rem,
+    'h3': 3rem,
+    'h4': 2.125rem,
+    'h5': 1.5rem,
+    'h6': 1.25rem,
+    '.subtitle-1': 1rem,
+    '.subtitle-2': .875rem,
+    '.body-1': 1rem,
+    '.body-2': .875rem,
+    '.caption': .75rem,
+    '.overline': .625rem,
+) !default;
+
+$fontMakets: (
+    'h1': thin,
+    'h2': thin,
+    'h3': regular,
+    'h4': regular,
+    'h5': regular,
+    'h6': medium,
+    '.subtitle-1': regular,
+    '.subtitle-2': medium,
+    '.body-1': regular,
+    '.body-2': regular,
+    '.caption': regular,
+    '.overline': regular,
+);
+
 /* Container */
 $containerWidth: 1100px !default;
 
 /* Grid */
-$gridMargins: ( tel: 16px, tab: 16px, desk: 24px) !default;
-$gridGutters: ( tel: 16px, tab: 16px, desk: 24px) !default;
+$gridMargins: ( tel: 1rem, tab: 1rem, desk: 1.5rem) !default;
+$gridGutters: ( tel: 1rems, tab: 1rem, desk: 1.5rem) !default;
 $gridCellCount: (tel: 4, tab: 8, desk: 12) !default;
-$gridCellMinHeight: 24px;
+$gridCellMinHeight: 1.5rem;
 
 /* Cards */
-$cardMinHeight: 64px !default;
+$cardMinHeight: 4rem !default;
 $cardBorderRadius: 2px !default;
 $cardContentMargin: 32px 16px !default;
-$cardMediaMinHeight: 64, 128, 196, 256 !default;
+$cardMediaMinHeight: 4rem, 8rem, 12rem, 16rem !default;
 $cardMediaMinHeightDefault: 128 !default;
 
 /* Colors */

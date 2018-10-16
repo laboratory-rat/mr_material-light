@@ -5,3 +5,13 @@
         @include set-font($k);
     }
 }
+
+@each $k, $v in $fontMakets{
+    #{$k}{
+        font-weight: map-get($map: $fontWeights, $key: $v);
+        font-size: map-get($map: $fontSizes, $key: $k);
+        line-height: 1;
+        margin: 0;
+        padding: 0;
+    }
+}
